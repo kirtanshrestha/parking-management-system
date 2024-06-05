@@ -23,10 +23,14 @@ class DashdriveoutController extends Controller
     }
     public function index()
     {
+                
+        $arr = DB::select('select cap  from capacity');
+        $total = $arr[0]->cap;
+
         $arr = DB::select('select count(id) as count from insides');
         $cap = $arr[0]->count;
 
-        $capmsg = 'Capacity: ' . $cap . '/10';
+        $capmsg = 'Capacity: ' . $cap . '/'.$total;
         $table = DB::select('select * from insides');
         // dd(session('susmsg'));
         $msg = ['capmsg' => $capmsg, 'susmsg' => session('susmsg'), 'data' => $table];
@@ -36,10 +40,14 @@ class DashdriveoutController extends Controller
 
     public function out()
     {
+                
+        $arr = DB::select('select cap  from capacity');
+        $total = $arr[0]->cap;
+
         $arr = DB::select('select count(id) as count from insides');
         $cap = $arr[0]->count;
 
-        $capmsg = 'Capacityyyyy: ' . $cap . '/10';
+        $capmsg = 'Capacityyyyy: ' . $cap . '/'.$total;
         $table = DB::select('select * from insides');
 
         $data = DB::select('select created_at,category from insides where reg_num=?', [request('reg_num')]);

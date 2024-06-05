@@ -21,15 +21,18 @@ class MainController extends Controller
 
         DB::update('update driveins set status=?, payment_mode=? where created_at like ?', ['out', $opt, $time]);
 
+                
+        $arr = DB::select('select cap  from capacity');
+        $total = $arr[0]->cap;
 
         $arr = DB::select('select count(id) as count from insides');
         $cap = $arr[0]->count;
         $alt = '';
 
         if ($cap < 10)
-            $capmsg = 'Capacity: ' . $cap . '/10';
+            $capmsg = 'Capacity: ' . $cap . '/'.$total;
         else {
-            $capmsg = 'Capacity: ' . $cap . '/10 Capacity full.';
+            $capmsg = 'Capacity: ' . $cap . '/'.$total.' Capacity full.';
             $alt = 'Click here to find alternative parkings nearby.';
         }
         $msg = ['capmsg' => $capmsg, 'susmsg' => 'Payment Successful! You may proceed.', 'alt' => $alt];
@@ -39,15 +42,18 @@ class MainController extends Controller
 
     public function index()
     {
+                
+        $arr = DB::select('select cap  from capacity');
+        $total = $arr[0]->cap;
 
         $arr = DB::select('select count(id) as count from insides');
         $cap = $arr[0]->count;
         $alt = '';
 
         if ($cap < 10)
-            $capmsg = 'Capacity: ' . $cap . '/10';
+            $capmsg = 'Capacity: ' . $cap . '/'.$total;
         else {
-            $capmsg = 'Capacity: ' . $cap . '/10 Capacity full.';
+            $capmsg = 'Capacity: ' . $cap . '/'.$total.' Capacity full.';
             $alt = 'Click here to find alternative parkings nearby.';
         }
 

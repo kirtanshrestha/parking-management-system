@@ -14,16 +14,18 @@ class DriveinController extends Controller
 {
     public function index()
     {
-
+        
+        $arr = DB::select('select cap  from capacity');
+        $total = $arr[0]->cap;
         $arr = DB::select('select count(id) as count from insides');
         $table = DB::select('select * from rates');
 
         $cap = $arr[0]->count;
 
-        if ($cap < 10)
-            $capmsg = 'Capacity: ' . $cap . '/10';
+        if ($cap < $total)
+            $capmsg = 'Capacity: ' . $cap . '/'. $total;
         else {
-            $capmsg = 'Capacity: ' . $cap . '/10. Capacity full.';
+            $capmsg = 'Capacity: ' . $cap . '/'.$total.'. Capacity full.';
             $alt = 'Click here to find alternative parkings nearby.';
             $msg = ['capmsg' => $capmsg, 'susmsg' => '', 'alt' => $alt];
 
@@ -35,7 +37,9 @@ class DriveinController extends Controller
 
     public function store(Request $request)
     {
-
+                
+        $arr = DB::select('select cap  from capacity');
+        $total = $arr[0]->cap;
         // storing to db
         $drivein = new drivein();
         $inside = new inside();
@@ -89,11 +93,10 @@ class DriveinController extends Controller
 
         //processing for navbar and return msg
         $arr = DB::select('select count(id) as count from insides');
-
         $cap = $arr[0]->count;
 
 
-        $capmsg = 'Capacity:' . $cap . '/10';
+        $capmsg = 'Capacity:' . $cap . '/'.$total;
 
         $msg = ['capmsg' => $capmsg, 'susmsg' => 'Vehicle entry successful', 'alt' => ''];
         return view('main', $msg);

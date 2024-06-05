@@ -19,15 +19,18 @@ class DriveoutController extends Controller
 
     public function index()
     {
-        $arr = DB::select('select count(id) as count from insides');
+                
+        $arr = DB::select('select cap  from capacity');
+        $total = $arr[0]->cap;
 
+        $arr = DB::select('select count(id) as count from insides');
         $cap = $arr[0]->count;
 
 
-        if ($cap < 10)
-            $capmsg = 'Capacity: ' . $cap . '/10';
+        if ($cap < $total)
+            $capmsg = 'Capacity: ' . $cap . '/'.$total;
         else {
-            $capmsg = 'Capacity: ' . $cap . '/10 Capacity full.';
+            $capmsg = 'Capacity: ' . $cap . '/'.$total.' Capacity full.';
         }
         $msg = ['capmsg' => $capmsg, 'susmsg', 'alt' => ''];
 
@@ -36,6 +39,7 @@ class DriveoutController extends Controller
 
     public function update()
     {
+        
 
         // $data=drivein::where('reg_num', request('reg_num'))->firstOrFail();
         $data = DB::select('select created_at,category from insides where num=? AND reg_num=?', [request('num'), request('reg_num')]);
