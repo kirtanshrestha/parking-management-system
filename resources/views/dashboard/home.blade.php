@@ -15,12 +15,14 @@
             type="image/x-icon"
         />
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <style>
+            body {
+        background-color: #679f86;
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
         /* Optional: Add some basic styling to the table */
 
         table {

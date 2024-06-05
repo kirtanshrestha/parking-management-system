@@ -12,8 +12,8 @@
             width: 300px;
             height: 400px;
             /* border: 3px solid #111; */
-            border: double 1em #457F8B;
-            border-radius: 15px;
+            border: solid 10px #71ad93;
+            border-radius:0%;
             /* background-image: linear-gradient(white, white),  */
             /* linear-gradient(to right, green, gold); */
             background-origin: border-box;
@@ -34,14 +34,14 @@
     </style>
 </head>
 
-<body style="background-color:#5cdb94">
+<body >
     @extends('layouts.headerlogin')
     @section('content')
     <div class="container">
         @csrf
         <p>{!! session('msg')!!}</p>
 
-        <P style="margin-top: 50px;font-size:medium">Select payment option:</P>
+        <p style="margin-top: 50px;font-size:large ">Select payment option:</P>
         <div class="row 2">
             <table>
                 <th>
@@ -70,6 +70,7 @@
                 </th>
 
             </table>
+            
 
         </div>
     </div>

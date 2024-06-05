@@ -21,7 +21,7 @@
 
 @extends('layouts.headerlogin')
 
-<body style="background-color:#5cdb94;">
+<body >
 
 
     @section('content')

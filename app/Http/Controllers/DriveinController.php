@@ -7,6 +7,8 @@ use App\Models\inside;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use PDO;
 
 class DriveinController extends Controller
 {
@@ -14,6 +16,7 @@ class DriveinController extends Controller
     {
 
         $arr = DB::select('select count(id) as count from insides');
+        $table = DB::select('select * from rates');
 
         $cap = $arr[0]->count;
 
@@ -26,11 +29,11 @@ class DriveinController extends Controller
 
             return view('main', $msg);
         }
-        $msg = ['capmsg' => $capmsg, 'susmsg' => '', 'alt' => ''];
+        $msg = ['capmsg' => $capmsg, 'susmsg' => '', 'alt' => '', 'data' => $table];
         return view('user/driveIn', $msg);
     }
 
-    public function store()
+    public function store(Request $request)
     {
 
         // storing to db
@@ -44,6 +47,32 @@ class DriveinController extends Controller
             $duplicate_msg = 'Vehicle with registration number ' . request('reg_num') . ' is already parked inside.';
             return redirect('/driveIn')->with('same', $duplicate_msg);
         }
+
+        $errors = [];
+
+
+
+        //validating num and reg num
+        $phoneNumber = $request->input('num');
+        $regNumber = $request->input('reg_num');
+
+        // Define the regular expression for validation
+        $regexnum = '/^(\+977)?[9][6-8]\d{8}$/';
+        $regexreg = '/^[A-Za-z]+\s[A-Za-z]+\s[0-9]{4}$/';
+
+        // Validate the phone number using preg_match
+        if (!preg_match($regexnum, $phoneNumber)) {
+            $errors['num'] = "Invalid Phone number.";
+        }
+        if (!preg_match($regexreg, $regNumber)) {
+            $errors['reg'] = "Invalid Registraion number.";
+        }
+
+        if (!empty($errors)) {
+            return redirect('/driveIn')->withErrors($errors);
+        }
+
+
         $drivein->reg_num = request('reg_num');
         $drivein->category = request('cat');
         $drivein->name = request('name');

@@ -1,5 +1,10 @@
-
 <style>
+   
+
+    body {
+        background-color: #679f86;
+    }
+
     .navbar {
         background-color: #05396b;
         border-bottom: 10px solid #296e60;
@@ -10,6 +15,9 @@
         text-decoration: none;
     }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">

@@ -45,7 +45,7 @@ class HomeController extends Controller
         
         
         
-        if($arr== null){
+        if($arr == null){
             $data=0;
         }
         else{

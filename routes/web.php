@@ -43,9 +43,13 @@ Route::post('/dashoutup', 'App\http\Controllers\DashdriveoutController@out')->na
 Route::get('/dashout', 'App\http\Controllers\DashdriveoutController@index')->name('dashout');
 Route::get('/history', 'App\http\Controllers\HistoryController@index')->name('history');
 Route::get('/report', 'App\http\Controllers\ReportController@index')->name('report');
+Route::get('/rate', 'App\http\Controllers\RateController@index')->name('rate');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('main/login', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
-//piechart
+
+//UPDATE RATE
+Route::post('/rate', 'App\http\Controllers\RateController@update');
 
 Auth::routes();
 

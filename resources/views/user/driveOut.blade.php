@@ -28,11 +28,14 @@
             color: #2F4858;
             font-weight: bolder;
             font-size: larger;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
         }
     </style>
 </head>
 
-<body style="background-color:#5cdb94">
+<body>
     @extends('layouts.header')
 
     @section('content')

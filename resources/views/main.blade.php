@@ -31,10 +31,14 @@
         }
 
         p {
-            color: #2F4858;
+            color: white;
             font-weight: bolder;
-            font-size: larger
+            font-size: larger;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
         }
+
 
         div.col-md-6 a:hover {
             text-decoration: none;
@@ -43,20 +47,23 @@
         .card-text {
             font-size: large;
             font-weight: 600;
-            color: black;
+            color: white;
             text-align: center;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
-<body style="background-color:#5cdb94">
+<body>
     @extends('layouts.header')
 
     @section('content')
     <div style="text-align:center; color:#edf4e0">
         <br>
-        <h1 style="color:#2F4858">Welcome to ABC parking</h1>
+        <h1 style="color:white">Welcome to The Next Center</h1>
         <p>Select your purpose</p>
     </div>
     <div class="container">
@@ -86,10 +93,6 @@
         <p> {{$susmsg}} </p>
 
     </div>
-
-
-
-
     <!-- js -->
     <script>
         // Function to generate a random color

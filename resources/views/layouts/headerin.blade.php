@@ -2,11 +2,18 @@
     .navbar {
         background-color: #05396b;
         border-bottom: 10px solid #296e60;
-         position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        /* overflow: hidden; */
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    body {
+        background-color: #679f86;
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        margin-top: 20px;
     }
 
 
@@ -15,9 +22,11 @@
         display: block;
         color: #f2f2f2;
         text-align: center;
-
         padding: 14px 50px;
         text-decoration: none;
+        font-family: "Nunito", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
     }
 
     .nav a:hover {
@@ -28,13 +37,15 @@
     .nav a.active {
         background-color: #296e60;
         color: white;
-        
+
     }
-    body{
-        background-color:#5cdb94;
-        margin-top: 20px;
-    }
+
+ 
 </style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
 <nav class="navbar navbar-expand-md ">
     <div class="container-fluid">
@@ -61,8 +72,9 @@
             </ul>
             <!-- THE NAVBAR -->
             <div class="nav" id="myNavbar">
-                <a href="home"  class="{{ Request::route()->getName() == 'home' ? 'active' : '' }}" onclick="setActiveLink(1)">Home</a>
+                <a href="home" class="{{ Request::route()->getName() == 'home' ? 'active' : '' }}" onclick="setActiveLink(1)">Home</a>
                 <a href="dashout" class="{{ Request::route()->getName() == 'dashout' ? 'active' : '' }}">Drive Out</a>
+                <a href="rate" class="{{ Request::route()->getName() == 'rate' ? 'active' : '' }}">Rate</a>
                 <a href="history" class="{{ Request::route()->getName() == 'history' ? 'active' : '' }}">History</a>
                 <a href="report" class="{{ Request::route()->getName() == 'report' ? 'active' : '' }}">Report</a>
                 <a href="driveIn">Vehicle entry</a>
@@ -92,10 +104,14 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/register">
+                            Register
+                        </a> 
+
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-
+                        
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
@@ -113,4 +129,3 @@
 </nav>
 
 @yield('content')
-

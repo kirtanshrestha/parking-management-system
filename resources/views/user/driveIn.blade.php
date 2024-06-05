@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         label {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: large;
+            font-size: larger;
+            font-weight: bolder;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
         }
+
 
         div.col-md-6 {
             margin-bottom: 15px;
@@ -28,16 +32,30 @@
             color: #2F4858;
             font-weight: bolder;
             font-size: larger;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+        table {
+            color: red;
         }
     </style>
 </head>
 
-<body style="background-color:#5cdb94">
+<body>
     @extends('layouts.header')
 
     @section('content')
     <div class="container" style="margin-top: 50px;">
         <p>{{session('same')}}</p>
+        @if ($errors->any())
+        <div>
+            @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+            @endforeach
+        </div>
+        @endif
         <form class="row g-3" action="/driveIn" method="POST">
             @csrf
 
@@ -62,18 +80,32 @@
                 </select>
             </div>
 
-
-
             <div class="col-6">
-                <div class="form-check">
-
-                </div>
+                <div class="form-check"></div>
             </div>
             <div class="col-md-12 ">
                 <button type="submit" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Park in</button>
             </div>
         </form>
+        <div class="card-body">
+            <table class="table table-dark table-bordered table-striped table-hover">
+                <thead>
+                    <h2>Current Rates</h2>
+                    <tr class="text-white">
+                        <th>Category</th>
+                        <th>Rate/hr</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($data as $item)
+                    <tr>
+                        <td>{{ $item->category }}</td>
+                        <td>Rs. {{ $item->rate }}</td>
+                    </tr>
+                    @endforeach
+        </div>
     </div>
+
     @endsection
 
 
