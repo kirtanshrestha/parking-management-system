@@ -63,6 +63,24 @@
             </div>
             
         </form>
+        <div class="card-body">
+            <table class="table table-dark table-bordered table-striped table-hover">
+                <thead>
+                    <h2>Current Rates</h2>
+                    <tr class="text-white">
+                        <th>Category</th>
+                        <th>Rate/hr</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($data as $item)
+                    <tr>
+                        <td>{{ $item->category }}</td>
+                        <td>Rs. {{ $item->rate }}</td>
+                    </tr>
+                    @endforeach
+            </table>
+        </div>
     </div>
     @endsection
 

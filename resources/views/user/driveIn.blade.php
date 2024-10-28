@@ -103,6 +103,7 @@
                         <td>Rs. {{ $item->rate }}</td>
                     </tr>
                     @endforeach
+            </table>
         </div>
     </div>
 

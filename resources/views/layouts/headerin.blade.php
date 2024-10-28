@@ -74,7 +74,7 @@
             <div class="nav" id="myNavbar">
                 <a href="home" class="{{ Request::route()->getName() == 'home' ? 'active' : '' }}" onclick="setActiveLink(1)">Home</a>
                 <a href="dashout" class="{{ Request::route()->getName() == 'dashout' ? 'active' : '' }}">Drive Out</a>
-                <a href="rate" class="{{ Request::route()->getName() == 'rate' ? 'active' : '' }}">Rate</a>
+                <a href="rate" class="{{ Request::route()->getName() == 'rate' ? 'active' : '' }}">Rate/Capacity</a>
                 <a href="history" class="{{ Request::route()->getName() == 'history' ? 'active' : '' }}">History</a>
                 <a href="report" class="{{ Request::route()->getName() == 'report' ? 'active' : '' }}">Report</a>
                 <a href="driveIn">Vehicle entry</a>

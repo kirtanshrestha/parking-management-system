@@ -16,38 +16,43 @@ class DriveoutController extends Controller
      *
      * @return void
      */
-
+    public function __construct()
+    {
+        $this->middleware('preventBackHistory');
+    }
     public function index()
     {
-                
+
         $arr = DB::select('select cap  from capacity');
         $total = $arr[0]->cap;
+        $table = DB::select('select * from rates');
 
         $arr = DB::select('select count(id) as count from insides');
         $cap = $arr[0]->count;
 
 
         if ($cap < $total)
-            $capmsg = 'Capacity: ' . $cap . '/'.$total;
+            $capmsg = 'Capacity: ' . $cap . '/' . $total;
         else {
-            $capmsg = 'Capacity: ' . $cap . '/'.$total.' Capacity full.';
+            $capmsg = 'Capacity: ' . $cap . '/' . $total . ' Capacity full.';
         }
-        $msg = ['capmsg' => $capmsg, 'susmsg', 'alt' => ''];
+        $msg = ['capmsg' => $capmsg, 'susmsg', 'alt' => '', 'data' => $table];
 
         return view('user/driveOut', $msg);
     }
 
     public function update()
     {
-        
+
 
         // $data=drivein::where('reg_num', request('reg_num'))->firstOrFail();
         $data = DB::select('select created_at,category from insides where num=? AND reg_num=?', [request('num'), request('reg_num')]);
         $rates = DB::select('select category,rate from rates');
+
         $rate_arr = [];
         foreach ($rates as $value) {
             $rate_arr[$value->category] = $value->rate;
-        }  
+        }
 
         if (sizeof($data) < 1)
             return redirect('/driveOut')->with('msg', 'Given data doesn\'t match our record. Please try again!');
@@ -79,7 +84,7 @@ class DriveoutController extends Controller
 
 
 
-        DB::update('update driveins set payment_mode="cash", charge=?,updated_at=?,status="out" where created_at like ?', [$price, $now, $string]);
+        DB::update('update driveins set payment_mode="Cash", charge=?,updated_at=?,status="out" where created_at like ?', [$price, $now, $string]);
         DB::table('insides')->where('created_at', '=', $string)->delete();
 
         return redirect('/pay')->with('msg', $msg)->with('data', $string);

@@ -21,7 +21,6 @@ class MainController extends Controller
 
         DB::update('update driveins set status=?, payment_mode=? where created_at like ?', ['out', $opt, $time]);
 
-                
         $arr = DB::select('select cap  from capacity');
         $total = $arr[0]->cap;
 
@@ -29,7 +28,7 @@ class MainController extends Controller
         $cap = $arr[0]->count;
         $alt = '';
 
-        if ($cap < 10)
+        if ($cap < $total)
             $capmsg = 'Capacity: ' . $cap . '/'.$total;
         else {
             $capmsg = 'Capacity: ' . $cap . '/'.$total.' Capacity full.';
@@ -50,7 +49,7 @@ class MainController extends Controller
         $cap = $arr[0]->count;
         $alt = '';
 
-        if ($cap < 10)
+        if ($cap < $total)
             $capmsg = 'Capacity: ' . $cap . '/'.$total;
         else {
             $capmsg = 'Capacity: ' . $cap . '/'.$total.' Capacity full.';

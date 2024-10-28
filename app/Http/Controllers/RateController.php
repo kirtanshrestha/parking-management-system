@@ -16,14 +16,14 @@ class RateController extends Controller
 
     public function index()
     {
-                
+
         $arr = DB::select('select cap  from capacity');
         $total = $arr[0]->cap;
 
         $arr = DB::select('select count(id) as count from insides');
         $cap = $arr[0]->count;
 
-        $capmsg = 'Capacity: ' . $cap . '/'.$total;
+        $capmsg = 'Capacity: ' . $cap . '/' . $total;
         $table = DB::select('select * from rates');
 
         $msg = ['capmsg' => $capmsg, 'susmsg' => '', 'data' => $table];
@@ -31,14 +31,29 @@ class RateController extends Controller
         return view('dashboard/rates', $msg);
     }
 
-    public function update()
+    public function update(Request $request)
     {
-        $category = request('cat');
-        $rate = request('rate');
+        if ($request->input('action') == "rate") {
+            $category = request('cat');
+            $rate = request('rate');
+            if ($rate < 1) {
+                $msg = 'Invalid rate: ' . $rate;
+                return redirect('/rate')->with('susmsg', $msg);
+            }
+            DB::update('update rates set rate=? where category like ?', [$rate, $category]);
 
-        DB::update('update rates set rate=? where category like ?', [$rate, $category]);
+            $msg = 'Rate update for ' . $category . ' (Rs. ' . $rate . ')';
+            return redirect('/rate')->with('susmsg', $msg);
+        } else if ($request->input('action') == "cap") {
 
-        $msg = 'Rate update for ' . $category . ' (Rs. ' . $rate . ')';
-        return redirect('/rate')->with('susmsg', $msg);
+            $cap = request('capacity');
+            if ($cap < 1) {
+                $msg = 'Invalid capacity: ' . $cap;
+                return redirect('/rate')->with('susmsg', $msg);
+            }
+            DB::update('update capacity set cap=?', [$cap]);
+            $msg = 'Capacity updated as ' . $cap;
+            return redirect('/rate')->with('susmsg', $msg);
+        }
     }
 }

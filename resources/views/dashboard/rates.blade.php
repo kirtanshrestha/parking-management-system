@@ -64,7 +64,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="rate" class="form-label" require>Rate</label>
-                                <input type="number" class="form-control" name="rate" id="rate" required>
+                                <input type="number" class="form-control" name="rate" id="rate" >
                             </div>
 
                             <div class="col-md-5">
@@ -73,9 +73,16 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Update</button>
+                                <button type="submit" name="action" value="rate" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Update Rate</button>
                             </div>
-
+                            <!-- capacity -->
+                            <div class="col-md-6">
+                                <label for="capacity" class="form-label" require>Capacity</label>
+                                <input type="number" class="form-control" name="capacity" id="capacity" >
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" name="action" value="cap" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Update Capacity</button>
+                            </div>
                         </form>
                         <br>
                         <table class="table table-bordered table-striped">
@@ -93,8 +100,6 @@
                                     <td>Rs. {{ $item->rate }}</td>
                                 </tr>
                                 @endforeach
-
-
                     </div>
                 </div>
             </div>
