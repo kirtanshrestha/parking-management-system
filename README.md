@@ -104,7 +104,7 @@ Access the application at [http://localhost:8000](http://localhost:8000).
     ![Admin Dashboard Screenshot](public/img/readme/report.jpg)
 
 - **User Module**: Users can find number of available parking spaces and complete parking-related transactions.
-    [User Module Screenshot](public/img/readme/drivein.jpg)
+    ![User Module Screenshot](public/img/readme/drivein.jpg)
 
 ### Testing
 The system has been tested for:
