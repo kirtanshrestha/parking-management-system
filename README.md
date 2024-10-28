@@ -75,13 +75,14 @@
             <li>Streamlined entry and exit processes</li>
             <li><img src="public\img\readme\pay.jpg" alt="User Module Screenshot"></li>
         </ul>
+        <br>
     </li>
     <li><strong>Admin Module</strong>:
         <ul>
             <li>Manage parking spot availability and monitor usage</li>
             <li>Generate and view parking utilization reports</li>
             <li>Set dynamic rates based on demand</li>
-            <li><img src="path/to/your/screenshot/admin-dashboard.png" alt="Admin Dashboard Screenshot"></li>
+            <li><img src="C:\Users\Kirtan\Documents\GitHub\parking-management-system\public\img\readme\dash.jpg" alt="Admin Dashboard Screenshot"></li>
         </ul>
     </li>
     <li><strong>Payment Integration</strong>:
