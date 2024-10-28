@@ -28,7 +28,7 @@ The **Parking Management System (PMS)** was created to address parking challenge
 - **User Module**:
   - Real-time display of parking space availability
   - Streamlined entry and exit processes
-  - ![User Module Screenshot](public/img/readme/pay.jpg)
+  - ![User Module Screenshot](public/img/readme/user.jpg)
 
 - **Admin Module**:
   - Manage parking spot availability and monitor usage
@@ -101,10 +101,10 @@ Access the application at [http://localhost:8000](http://localhost:8000).
 
 ### Usage
 - **Admin Dashboard**: Access the admin dashboard to manage parking spaces, monitor usage, and view reports.
-    ![Admin Dashboard Screenshot](path/to/your/screenshot/admin-dashboard.png)
+    ![Admin Dashboard Screenshot](public/img/readme/report.jpg)
 
-- **User Module**: Users can view available parking spaces and complete parking-related transactions.
-    [User Module Screenshot](path/to/your/screenshot/user-module.png)
+- **User Module**: Users can find number of available parking spaces and complete parking-related transactions.
+    [User Module Screenshot](public/img/readme/drivein.jpg)
 
 ### Testing
 The system has been tested for:
