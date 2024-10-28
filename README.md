@@ -73,7 +73,7 @@
         <ul>
             <li>Real-time display of parking space availability</li>
             <li>Streamlined entry and exit processes</li>
-            <li><img src="path/to/your/screenshot/user-module.png" alt="User Module Screenshot"></li>
+            <li><img src="public\img\readme\pay.jpg" alt="User Module Screenshot"></li>
         </ul>
     </li>
     <li><strong>Admin Module</strong>:
