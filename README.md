@@ -60,3 +60,44 @@ The **Parking Management System (PMS)** was created to address parking challenge
    ```bash
    git clone https://github.com/your-username/parking-management-system.git
    cd parking-management-system
+
+### 3. Install Dependencies
+Run the following commands to install project dependencies:
+```bash
+composer install
+npm install && npm run dev
+
+
+
+
+
+### Usage
+- **Admin Dashboard**: Access the admin dashboard to manage parking spaces, monitor usage, and view reports.
+    ![Admin Dashboard Screenshot](path/to/your/screenshot/admin-dashboard.png)
+
+- **User Module**: Users can view available parking spaces and complete parking-related transactions.
+    ![User Module Screenshot](path/to/your/screenshot/user-module.png)
+
+### Testing
+The system has been tested for:
+- **Functionality**: Core features like user login, parking availability tracking, and payment processing.
+- **Performance**: Load testing to handle multiple users concurrently.
+- **Security**: Basic testing for data integrity and input validation.
+
+### Limitations
+- Dependence on a stable internet connection for real-time data updates.
+- High initial setup costs and dependency on XAMPP for local hosting.
+- Limited scalability for larger parking lots or more complex systems.
+
+### Future Enhancements
+- **Smart Parking Sensors**: Integrating IoT sensors for real-time availability updates.
+- **Advanced Analytics**: Data analysis for usage insights and dynamic rate optimization.
+- **Automated License Plate Recognition (ALPR)**: To streamline vehicle entry and exit tracking.
+
+### License
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+### Contact
+Developed by Kirtan Shrestha  
+Thames International College  
+[your-email@example.com](mailto:your-email@example.com)
