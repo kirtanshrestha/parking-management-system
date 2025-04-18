@@ -15,9 +15,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
-
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
+    <script src="{{ asset('build/assets/app.js') }}" defer></script>
+
 </head>
 
 @extends('layouts.headerlogin')
