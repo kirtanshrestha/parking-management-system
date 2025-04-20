@@ -14,15 +14,13 @@
             href="/img/logo3.png"
             type="image/x-icon"
         />
-
-
     <style>
-            body {
-        background-color: #679f86;
-        font-family: "Nunito", sans-serif;
-        font-optical-sizing: auto;
-        font-style: normal;
-    }
+        body {
+            background-color: #679f86;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            }
         /* Optional: Add some basic styling to the table */
 
         table {
@@ -73,11 +71,19 @@
             flex: 1;
             /* Allow canvas elements to resize dynamically */
         }
+
+        .dashboard {
+            font-family: "Fira Sans", sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
 </head>
 
 <body>
@@ -91,21 +97,21 @@
                     <div class="container" style="margin-top: 20px;">
                         <table>
                             <tr>
-                                <th> <img src="img/total.png" alt="a">
+                                <th> <img src="img/total-vehicles1.png" alt="a">
                                     <p style="font-size:300%; ; text-align:center; margin:0;">{{$icon[0]}}</p>
-                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;">Total vehicles</p>
+                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;" class = "dashboard">Total vehicles</p>
                                 </th>
-                                <th> <img src="img/in.png" alt="a">
+                                <th> <img src="img/vehicles-in1.png" alt="a">
                                     <p style="font-size:300%; ; text-align:center; margin:0;">{{$icon[1]}}</p>
-                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;">Vehicles In</p>
+                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;" class = "dashboard">Vehicles In</p>
                                 </th>
-                                <th> <img src="img/out.png" alt="a">
+                                <th> <img src="img/vehicles-out2.png" alt="a">
                                     <p style="font-size:300%; ; text-align:center; margin:0;">{{$icon[2]}}</p>
-                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;">Vehicles Out</p>
+                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;" class = "dashboard">Vehicles Out</p>
                                 </th>
-                                <th> <img src="img/coins.png" alt="a">
+                                <th> <img src="img/total-revenue.png" alt="a">
                                     <p style="font-size:300%; ; text-align:center; margin:0;">$ {{$icon[3]}}</p>
-                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;">Revenue</p>
+                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;" class = "dashboard">Revenue</p>
                                 </th>
                             </tr>
                         </table>
@@ -118,20 +124,19 @@
                         </div>
                         @endif
 
-                        <!-- CHARTSSSSSS -->
+                        <!-- Bar Graph -->
                         <div class="chart-container">
                             <span class="card" style="margin-top:20px; width:65%; ">
-                                <h1>Total minutes parked</h1>
+                                <h1 class ="dashboard">Total Minutes Parked</h1>
                                 <canvas id="myBarChart"></canvas>
                             </span>
                             <span class="card" style="margin-top:20px; width:24rem; ">
-                                <h1>Total revenue</h1>
+                                <h1 class ="dashboard">Total Revenue</h1>
                                 <canvas id="myPieChart"></canvas>
                             </span>
                         </div>
-
-
-                        <!-- piecharttt -->
+                        
+                        <!-- JS for Pie Chart -->
                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                         <script>
                             var ctx = document.getElementById('myPieChart').getContext('2d');
@@ -155,7 +160,7 @@
                                 });
                         </script>
 
-                        <!-- bar graph -->
+                        <!-- JS for Bar Graph-->
                         <script>
                             var data = {!! json_encode($data) !!};
 

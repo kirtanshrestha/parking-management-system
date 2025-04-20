@@ -69,7 +69,7 @@
             </div>
             <div class="col-6">
                 <label for="reg_num" class="form-label" require>Registration Number</label>
-                <input type="text" class="form-control" name="reg_num" id="reg_num" placeholder="B AA 1234" value="{{ old('reg_num') }}" required>
+                <input type="text" class="form-control" name="reg_num" id="reg_num" placeholder="XXX0000" value="{{ old('reg_num') }}" required>
             </div>
             <div class="col-md-6">
                 <label for="cat" class="form-label">Category</label><br>

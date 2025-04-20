@@ -46,11 +46,11 @@
         
             <div class="col-md-6">
                 <label for="num" class="form-label">Phone Number</label>
-                <input type="number" class="form-control" placeholder="9841234456" name="num" id="num" requires>
+                <input type="number" class="form-control" placeholder="XXX-XXX-XXXX" name="num" id="num" requires>
             </div>
             <div class="col-md-6">
                 <label for="reg_num" class="form-label" require>Registration Number</label>
-                <input type="text" class="form-control" name="reg_num" id="reg_num" placeholder="B AA 1234" required>
+                <input type="text" class="form-control" name="reg_num" id="reg_num" placeholder="XXX0000" required>
             </div>
 
             <div class="col-md-5">

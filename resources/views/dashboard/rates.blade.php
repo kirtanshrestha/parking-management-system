@@ -48,7 +48,7 @@
                 <h1>{{session('susmsg')}}</h1>
                 <div class="card">
                     <div class="card-header">
-                        Rates
+                        Rates:
                     </div>
                     <div class="card-body">
                         <form class="row g-3" action="/rate" method="POST">
@@ -77,8 +77,10 @@
                             </div>
                             <!-- capacity -->
                             <div class="col-md-6">
-                                <label for="capacity" class="form-label" require>Capacity</label>
-                                <input type="number" class="form-control" name="capacity" id="capacity" >
+                                <label for="capacity" class="form-label" require>
+                                    Capacity: 
+                                </label>
+                                <input type="number" class="form-control" name="capacity" id="capacity">
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" name="action" value="cap" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Update Capacity</button>

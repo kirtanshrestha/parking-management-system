@@ -37,7 +37,7 @@ class RateController extends Controller
             $category = request('cat');
             $rate = request('rate');
             if ($rate < 1) {
-                $msg = 'Invalid rate: ' . $rate;
+                $msg = 'INVALID RATE' . $rate;
                 return redirect('/rate')->with('susmsg', $msg);
             }
             DB::update('update rates set rate=? where category like ?', [$rate, $category]);
@@ -48,7 +48,7 @@ class RateController extends Controller
 
             $cap = request('capacity');
             if ($cap < 1) {
-                $msg = 'Invalid capacity: ' . $cap;
+                $msg = 'INVALID' . $cap;
                 return redirect('/rate')->with('susmsg', $msg);
             }
             DB::update('update capacity set cap=?', [$cap]);

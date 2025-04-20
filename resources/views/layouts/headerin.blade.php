@@ -1,7 +1,7 @@
 <style>
     .navbar {
-        background-color: #05396b;
-        border-bottom: 10px solid #296e60;
+        background-color: #1b4965;
+        border-bottom: 10px solid #e9c48d;
         position: fixed;
         width: 100%;
         top: 0;
@@ -9,7 +9,7 @@
     }
 
     body {
-        background-color: #679f86;
+        background-color: #84a59d;
         font-family: "Nunito", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
@@ -74,7 +74,7 @@
             <div class="nav" id="myNavbar">
                 <a href="home" class="{{ Request::route()->getName() == 'home' ? 'active' : '' }}" onclick="setActiveLink(1)">Home</a>
                 <a href="dashout" class="{{ Request::route()->getName() == 'dashout' ? 'active' : '' }}">Drive Out</a>
-                <a href="rate" class="{{ Request::route()->getName() == 'rate' ? 'active' : '' }}">Rate/Capacity</a>
+                <a href="rate" class="{{ Request::route()->getName() == 'rate' ? 'active' : '' }}">Rate / Capacity</a>
                 <a href="history" class="{{ Request::route()->getName() == 'history' ? 'active' : '' }}">History</a>
                 <a href="report" class="{{ Request::route()->getName() == 'report' ? 'active' : '' }}">Report</a>
                 <a href="driveIn">Vehicle Entry</a>
