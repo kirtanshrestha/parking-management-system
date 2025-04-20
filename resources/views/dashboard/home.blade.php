@@ -9,9 +9,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>PMS | Dashboard</title>
-    <link rel="icon" href="/img/logo.png" type="image/x-icon" />
+    <link rel="icon" href="/img/logo3.png" type="image/x-icon" />
     <link rel="icon"
-            href="/img/logo.png"
+            href="/img/logo3.png"
             type="image/x-icon"
         />
 
@@ -104,7 +104,7 @@
                                     <p style="font-size:150% ; text-align: center; margin:0; color:grey;">Vehicles Out</p>
                                 </th>
                                 <th> <img src="img/coins.png" alt="a">
-                                    <p style="font-size:300%; ; text-align:center; margin:0;">Rs. {{$icon[3]}}</p>
+                                    <p style="font-size:300%; ; text-align:center; margin:0;">$ {{$icon[3]}}</p>
                                     <p style="font-size:150% ; text-align: center; margin:0; color:grey;">Revenue</p>
                                 </th>
                             </tr>

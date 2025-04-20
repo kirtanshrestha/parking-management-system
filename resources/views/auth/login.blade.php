@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>PMS | Login</title>
-    <link rel="icon" href="/img/logo.png" type="image/x-icon" />
+    <link rel="icon" href="/img/logo3.png" type="image/x-icon" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

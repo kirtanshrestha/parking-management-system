@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>PMS | Drive Out</title>
-    <link rel="icon" href="/img/logo.png" type="image/x-icon" />
+    <link rel="icon" href="/img/logo3.png" type="image/x-icon" />
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">

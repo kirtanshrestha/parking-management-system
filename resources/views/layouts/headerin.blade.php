@@ -49,7 +49,7 @@
 
 <nav class="navbar navbar-expand-md ">
     <div class="container-fluid">
-        <a class="navbar-brand" href="home"><img src="img/logo.png" style="width:80px ; height:auto ;" alt="mainlogo"></a>
+        <a class="navbar-brand" href="home"><img src="img/logo3.png" style="width:80px ; height:auto ;" alt="mainlogo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,8 +58,8 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <li style="color:#edf4e0;">
-                    <?php $timezone = date_default_timezone_set('Asia/Kathmandu');
-                    $date = date('Y-m-d');
+                    <?php $timezone = date_default_timezone_set('America/New_York');
+                    $date = date('d/m/Y');
                     echo $date; ?> <br>
                     <?php $time = date('h:i:s A');
                     echo $time; ?>
@@ -77,7 +77,7 @@
                 <a href="rate" class="{{ Request::route()->getName() == 'rate' ? 'active' : '' }}">Rate/Capacity</a>
                 <a href="history" class="{{ Request::route()->getName() == 'history' ? 'active' : '' }}">History</a>
                 <a href="report" class="{{ Request::route()->getName() == 'report' ? 'active' : '' }}">Report</a>
-                <a href="driveIn">Vehicle entry</a>
+                <a href="driveIn">Vehicle Entry</a>
             </div>
 
             <!-- Right Side Of Navbar -->

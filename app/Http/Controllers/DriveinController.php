@@ -15,7 +15,7 @@ class DriveinController extends Controller
     public function index()
     {
         
-        $arr = DB::select('select cap  from capacity');
+        $arr = DB::select('select cap from capacity');
         $total = $arr[0]->cap;
         $arr = DB::select('select count(id) as count from insides');
         $table = DB::select('select * from rates');
@@ -54,34 +54,41 @@ class DriveinController extends Controller
 
         $errors = [];
 
-
-
         //validating num and reg num
         $phoneNumber = $request->input('num');
         $regNumber = $request->input('reg_num');
 
-        // Define the regular expression for validation
-        $regexnum = '/^(\+977)?[9][6-8]\d{8}$/';
-        $regexreg = '/^[A-Za-z]+\s[A-Za-z]+\s[0-9]{4}$/';
+        // Define the regular expression for validation (Nepali)
+        // $regexnum = '/^(\+977)?[9][6-8]\d{8}$/';
+        // $regexreg = '/^[A-Za-z]+\s[A-Za-z]+\s[0-9]{4}$/';
 
-        // Validate the phone number using preg_match
+        // // Validate the phone number using preg_match
+        // if (!preg_match($regexnum, $phoneNumber)) {
+        //     $errors['num'] = "Invalid Phone number.";
+        // }
+
+        // Define the regular expression for US phone number format
+        $regexnum = '/^(\+1\s?)?(\(?\d{3}\)?[\s.-]?)\d{3}[\s.-]?\d{4}$/';
+
         if (!preg_match($regexnum, $phoneNumber)) {
             $errors['num'] = "Invalid Phone number.";
         }
-        if (!preg_match($regexreg, $regNumber)) {
-            $errors['reg'] = "Invalid Registraion number.";
-        }
+
+        // if (!preg_match($regexreg, $regNumber)) {
+        //     $errors['reg'] = "Invalid Registraion number.";
+        // }
+
+        // Retain old input values in case of validation errors
+        $oldInput = $request->all();
 
         if (!empty($errors)) {
-            return redirect('/driveIn')->withErrors($errors);
+            return redirect('/driveIn')->withErrors($errors)->withInput($oldInput);
         }
-
 
         $drivein->reg_num = request('reg_num');
         $drivein->category = request('cat');
         $drivein->name = request('name');
         $drivein->num = request('num');
-
 
         $inside->reg_num = request('reg_num');
         $inside->category = request('cat');
@@ -94,7 +101,6 @@ class DriveinController extends Controller
         //processing for navbar and return msg
         $arr = DB::select('select count(id) as count from insides');
         $cap = $arr[0]->count;
-
 
         $capmsg = 'Capacity:' . $cap . '/'.$total;
 

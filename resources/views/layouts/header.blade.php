@@ -1,15 +1,15 @@
 <style>
-   
-
     body {
-        background-color: #679f86;
+        /* background-color: #679f86; */
+        background-color: #84a59d;
+        font-family: 'Fira Sans', sans-serif;
     }
 
     .navbar {
-        background-color: #05396b;
-        border-bottom: 10px solid #296e60;
+        background-color: #1b4965;
+        border-bottom: 10px solid #e9c48d;
+        /* border-image: linear-gradient(to right,rgb(43, 86, 93), #22484e) 1; */
     }
-
 
     a:hover {
         text-decoration: none;
@@ -21,7 +21,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/"><img src="/img/logo.png" style="width:80px ; height:auto ;" alt="mainlogo"></a>
+            <a class="navbar-brand" href="/"><img src="/img/logo3.png" style="width:80px ; height:auto ;" alt="mainlogo"></a>
         </div>
 
         <p style="color: #edf4e0;">{{$capmsg}}<br><a id="random-text" target="_blank" style="color: #edf4e0" href="https://www.google.com/maps/search/parking+near+me">{{$alt}}</a></p>
@@ -31,8 +31,8 @@
             <li><a href="login"><button type="button" class="btn btn-success">Login</button></a></li>
 
             <li style="color:#edf4e0;">
-                <?php $timezone = date_default_timezone_set('Asia/Kathmandu');
-                $date = date('Y-m-d');
+                <?php $timezone = date_default_timezone_set(timezoneId: 'America/New_York');
+                $date = date('d/m/Y');
                 echo $date; ?>
             </li>
 

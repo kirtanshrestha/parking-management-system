@@ -38,6 +38,12 @@ class ReportController extends Controller
         } else {
             $month = request('month');
         }
+
+        // Ensure the month input is valid
+        if (!preg_match('/^\d{4}-(0[1-9]|1[0-2])$/', $month)) {
+            return redirect()->back()->withErrors(['month' => 'Invalid month format. Please use YYYY-MM.']);
+        }
+
         $mnth = $month;
         $month = $month . "%";
         //getting month string

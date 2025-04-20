@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>PMS | History</title>
-    <link rel="icon" href="/img/logo.png" type="image/x-icon" />
+    <link rel="icon" href="/img/logo3.png" type="image/x-icon" />
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -96,10 +96,12 @@
                             <tbody>
                                 @foreach($data as $item)
                                 <tr>
-                                    <td>Rs. {{ $item->category }}</td>
-                                    <td>Rs. {{ $item->rate }}</td>
+                                    <td> {{ $item->category }}</td>
+                                    <td>$ {{ $item->rate }}</td>
                                 </tr>
                                 @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

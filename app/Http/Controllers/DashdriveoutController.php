@@ -90,6 +90,6 @@ class DashdriveoutController extends Controller
 
         $msg = ['capmsg' => $capmsg, 'susmsg' => $price, 'data' => $table];
 
-        return redirect()->back()->with('msg', $msg)->with('price', "Charge Rs." . $price);
+        return redirect()->back()->with('msg', $msg)->with('price', "Charge $" . $price);
     }
 }

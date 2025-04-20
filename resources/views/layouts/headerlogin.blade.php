@@ -18,12 +18,12 @@
     
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/"><img src="img/logo.png" style="width:80px ; height:auto ; border:none;" alt="mainlogo"></a>
+            <a class="navbar-brand" href="/"><img src="img/logo3.png" style="width:80px ; height:auto ; border:none;" alt="mainlogo"></a>
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li style="color:#edf4e0;">
-                <?php $timezone = date_default_timezone_set('Asia/Kathmandu');
-                $date = date('Y-m-d');
+                <?php $timezone = date_default_timezone_set('America/New_York');
+                $date = date('d/m/Y');
                 echo $date; ?>
             </li>
 

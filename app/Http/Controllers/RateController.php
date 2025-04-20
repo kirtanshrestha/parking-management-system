@@ -42,7 +42,7 @@ class RateController extends Controller
             }
             DB::update('update rates set rate=? where category like ?', [$rate, $category]);
 
-            $msg = 'Rate update for ' . $category . ' (Rs. ' . $rate . ')';
+            $msg = 'Rate update for ' . $category . ' ($ ' . $rate . ')';
             return redirect('/rate')->with('susmsg', $msg);
         } else if ($request->input('action') == "cap") {
 

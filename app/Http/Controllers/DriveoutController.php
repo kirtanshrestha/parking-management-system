@@ -80,7 +80,7 @@ class DriveoutController extends Controller
             else
                 $price = $rate_arr['other'] * $diff_in_hours;
         }
-        $msg = 'Total hour/s parked: ' . $diff_in_hours . '<br>Charge: Rs.' . $price;
+        $msg = 'Total hour/s parked: ' . $diff_in_hours . '<br>Charge: $ ' . $price;
 
 
 

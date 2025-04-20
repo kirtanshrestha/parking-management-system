@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PMS | Drive In</title>
-    <link rel="icon" href="/img/logo.png" type="image/x-icon" />
+    <link rel="icon" href="/img/logo3.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         label {
@@ -61,22 +61,22 @@
 
             <div class="col-md-6">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" name="name" id="name" reduired>
+                <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}" required>
             </div>
             <div class="col-md-6">
                 <label for="num" class="form-label">Phone Number</label>
-                <input type="number" class="form-control" name="num" id="num" required>
+                <input type="number" class="form-control" name="num" id="num" value="{{ old('num') }}" required>
             </div>
             <div class="col-6">
                 <label for="reg_num" class="form-label" require>Registration Number</label>
-                <input type="text" class="form-control" name="reg_num" id="reg_num" placeholder="B AA 1234" required>
+                <input type="text" class="form-control" name="reg_num" id="reg_num" placeholder="B AA 1234" value="{{ old('reg_num') }}" required>
             </div>
             <div class="col-md-6">
                 <label for="cat" class="form-label">Category</label><br>
                 <select id="cat" name="cat" class="form-select">
-                    <option selected>4-wheeler</option>
-                    <option>2-wheeler</option>
-                    <option>other</option>
+                    <option value="4-wheeler" {{ old('cat') == '4-wheeler' ? 'selected' : '' }}>4-wheeler</option>
+                    <option value="2-wheeler" {{ old('cat') == '2-wheeler' ? 'selected' : '' }}>2-wheeler</option>
+                    <option value="other" {{ old('cat') == 'other' ? 'selected' : '' }}>other</option>
                 </select>
             </div>
 
@@ -100,7 +100,7 @@
                     @foreach($data as $item)
                     <tr>
                         <td>{{ $item->category }}</td>
-                        <td>Rs. {{ $item->rate }}</td>
+                        <td>$ {{ $item->rate }}</td>
                     </tr>
                     @endforeach
             </table>
