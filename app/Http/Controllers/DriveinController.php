@@ -104,7 +104,11 @@ class DriveinController extends Controller
 
         $capmsg = 'Capacity:' . $cap . '/'.$total;
 
-        $msg = ['capmsg' => $capmsg, 'susmsg' => 'Vehicle entry successful', 'alt' => ''];
+        $msg = [
+            'capmsg' => $capmsg, 
+            'susmsg' => "Vehicle entry successful",
+            'alt' => ''];
+            
         return view('main', $msg);
     }
 }

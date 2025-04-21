@@ -36,7 +36,7 @@
 
             <li style="color:#edf4e0;">
                 <?php $timezone = date_default_timezone_set(timezoneId: 'America/New_York');
-                $date = date('d/m/Y');
+                $date = date('m/d/Y');
                 echo $date; ?>
             </li>
 
