@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pushing Parking</title>
+    <title> PMS </title>
     <link rel="icon" href="/img/logo2.png" type="image/x-icon" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" 
@@ -104,6 +104,7 @@
         text-align: center;
         margin-bottom: 20px;
         display: inline-block;
+        text-shadow: none;
     }
 
     .subheading:hover {

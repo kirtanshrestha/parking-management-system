@@ -47,7 +47,7 @@
                 <th>
                     <div class="col">
                         <div>
-                            <a href="main/{{'1'.session('data')}}"> <img src="img/cash.png" alt="helo"></a>
+                            <a href="main/{{'1'.session('data')}}"> <img src="img/cash1.png" alt="helo"></a>
                             <h6 style="text-align: center; margin-top:10px ">Cash</h6>
                         </div>
                     </div>

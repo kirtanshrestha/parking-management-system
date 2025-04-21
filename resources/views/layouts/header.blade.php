@@ -28,7 +28,11 @@
 
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="login"><button type="button" class="btn btn-success">Login</button></a></li>
+            <li>
+                <a href="login">
+                    <button type="button" class="btn btn-success"> LOGIN </button>
+                </a>
+            </li>
 
             <li style="color:#edf4e0;">
                 <?php $timezone = date_default_timezone_set(timezoneId: 'America/New_York');
@@ -37,7 +41,7 @@
             </li>
 
             <li style="color:#edf4e0;">
-                <?php $time = date('h:i:s A');
+                <?php $time = date('h:i A');
                 echo $time; ?>
             </li>
         </ul>

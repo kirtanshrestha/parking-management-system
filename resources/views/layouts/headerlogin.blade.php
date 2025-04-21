@@ -28,7 +28,7 @@
             </li>
 
             <li style="color:#edf4e0;">
-                <?php $time = date('h:i:s A');
+                <?php $time = date('h:i A');
                 echo $time; ?>
             </li>
         </ul>

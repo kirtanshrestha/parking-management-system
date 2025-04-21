@@ -98,20 +98,20 @@
                         <table>
                             <tr>
                                 <th> <img src="img/total-vehicles1.png" alt="a">
-                                    <p style="font-size:300%; ; text-align:center; margin:0;">{{$icon[0]}}</p>
-                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;" class = "dashboard">Total vehicles</p>
+                                    <p style="font-size:200%; ; text-align:center; margin:2px 0 0 0;">{{$icon[0]}}</p>
+                                    <p style="font-size:150% ; text-align: center; margin:2px 0 0 0; color:grey;" class = "dashboard">Total Vehicles</p>
                                 </th>
                                 <th> <img src="img/vehicles-in1.png" alt="a">
-                                    <p style="font-size:300%; ; text-align:center; margin:0;">{{$icon[1]}}</p>
-                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;" class = "dashboard">Vehicles In</p>
+                                    <p style="font-size:200%; ; text-align:center; margin:2px 0 0 0;">{{$icon[1]}}</p>
+                                    <p style="font-size:150% ; text-align: center; margin:2px 0 0 0; color:grey;" class = "dashboard">Vehicles In</p>
                                 </th>
                                 <th> <img src="img/vehicles-out2.png" alt="a">
-                                    <p style="font-size:300%; ; text-align:center; margin:0;">{{$icon[2]}}</p>
-                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;" class = "dashboard">Vehicles Out</p>
+                                    <p style="font-size:200%; ; text-align:center; margin:2px 0 0 0;">{{$icon[2]}}</p>
+                                    <p style="font-size:150% ; text-align: center; margin:2px 0 0 0; color:grey;" class = "dashboard">Vehicles Out</p>
                                 </th>
                                 <th> <img src="img/total-revenue.png" alt="a">
-                                    <p style="font-size:300%; ; text-align:center; margin:0;">$ {{$icon[3]}}</p>
-                                    <p style="font-size:150% ; text-align: center; margin:0; color:grey;" class = "dashboard">Revenue</p>
+                                    <p style="font-size:200%; ; text-align:center; margin:2px 0 0 0;">$ {{$icon[3]}}</p>
+                                    <p style="font-size:150% ; text-align: center; margin:2px 0 0 0; color:grey;" class = "dashboard">Total Revenue</p>
                                 </th>
                             </tr>
                         </table>

@@ -26,11 +26,11 @@
 <body>
 
     @section('content')
-    <div class="container" style="margin-top: 50px;">
-        <div class="row justify-content-center">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row w-100 justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+                <div class="card shadow rounded" style="padding: 2rem; border: none;">
+                    <div class="card-header text-center bg-primary text-white" style="font-size: 1.5rem; font-weight: 600;"> {{ __('Login') }} </div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">

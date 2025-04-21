@@ -16,9 +16,24 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    </style>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #679f86;
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        .navbar {
+            background-color: #1b4965;
+            border-bottom: 10px solid #e9c48d;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -31,8 +46,8 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">
-                        Vehicle inside parking
+                    <div class="card-header font-weight-bolder">
+                        Currently Parked Vehicles
                     </div>
 
                     <div class="card-body">
@@ -41,16 +56,15 @@
                             {!! session('price')!!}
                         </p>
 
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered table-striped text-center">
                             <thead>
                                 <tr class="bg-primary text-white">
-                                    <th>Reg no.</th>
+                                    <th>Plate No.</th>
                                     <th>Category</th>
-                                    <th>Phone no.</th>
+                                    <th>Phone No.</th>
                                     <th>Name</th>
                                     <th>Arrival time</th>
                                     <th>Action</th>
-                                    <!-- Add more table headers as needed -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,26 +80,19 @@
                                             @csrf <!-- CSRF protection -->
                                             <input type="hidden" name="reg_num" value="{{ $item->reg_num }}">
                                             <input type="hidden" name="created_at" value="{{ $item->created_at }}">
-                                            <button value="{{$item->reg_num}}" class="btn btn-info" type="submit">Drive out</button>
+                                            <button value="{{$item->reg_num}}" class="btn btn-info" type="submit">Drive Out</button>
                                         </form>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    </div>
-
-
 </body>
-
 </html>
-
-
 @endsection

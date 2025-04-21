@@ -29,10 +29,10 @@
     <div class="container" style="margin-top: 150px;">
 
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        Previously Parked
+                    <div class="card-header font-weight-bolder">
+                        Parking History
                     </div>
 
                     <div class="card-body">
@@ -41,14 +41,14 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr class="bg-primary text-white">
-                                    <th>Reg no.</th>
-                                    <th>Category</th>
-                                    <th>Phone no.</th>
+                                    <th>Plate No.</th>
+                                    <th>Vehicle Type</th>
+                                    <th>Phone No.</th>
                                     <th>Name</th>
-                                    <th>Charge</th>
-                                    <th>Payment mode</th>
-                                    <th>Arrival time</th>
-                                    <th>Departure time</th>
+                                    <th>Charge ($)</th>
+                                    <th>Payment Method</th>
+                                    <th>Time In</th>
+                                    <th>Time Out</th>
                                 </tr>
                             </thead>
                             <tbody>

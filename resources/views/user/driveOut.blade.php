@@ -32,6 +32,17 @@
             font-optical-sizing: auto;
             font-style: normal;
         }
+
+        .custom-light-table {
+            background-color: white;
+            color: black;
+        }
+
+        .custom-light-table thead {
+            background-color: #f8f9fa; /* Light gray header */
+            color: black;
+        }
+
     </style>
 </head>
 
@@ -49,7 +60,7 @@
                 <input type="number" class="form-control" placeholder="XXX-XXX-XXXX" name="num" id="num" requires>
             </div>
             <div class="col-md-6">
-                <label for="reg_num" class="form-label" require>Registration Number</label>
+                <label for="reg_num" class="form-label" require>License Plate Number</label>
                 <input type="text" class="form-control" name="reg_num" id="reg_num" placeholder="XXX0000" required>
             </div>
 
@@ -59,17 +70,17 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <button type="submit" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Park out</button>
+                <button type="submit" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Park Out</button>
             </div>
             
         </form>
         <div class="card-body">
-            <table class="table table-dark table-bordered table-striped table-hover">
+            <table class="table table-bordered table-striped table-hover custom-light-table">
                 <thead>
                     <h2>Current Rates</h2>
-                    <tr class="text-white">
-                        <th>Category</th>
-                        <th>Rate/hr</th>
+                    <tr class="text-black">
+                        <th>Vehicle Type</th>
+                        <th>Rate/Hr</th>
                     </tr>
                 </thead>
                 <tbody>

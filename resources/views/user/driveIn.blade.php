@@ -38,7 +38,7 @@
         }
 
         table {
-            color: red;
+            color: black;
         }
     </style>
 </head>
@@ -68,7 +68,7 @@
                 <input type="number" class="form-control" name="num" id="num" value="{{ old('num') }}" required>
             </div>
             <div class="col-6">
-                <label for="reg_num" class="form-label" require>Registration Number</label>
+                <label for="reg_num" class="form-label" require>License Plate Number</label>
                 <input type="text" class="form-control" name="reg_num" id="reg_num" placeholder="XXX0000" value="{{ old('reg_num') }}" required>
             </div>
             <div class="col-md-6">
@@ -76,7 +76,7 @@
                 <select id="cat" name="cat" class="form-select">
                     <option value="4-wheeler" {{ old('cat') == '4-wheeler' ? 'selected' : '' }}>4-wheeler</option>
                     <option value="2-wheeler" {{ old('cat') == '2-wheeler' ? 'selected' : '' }}>2-wheeler</option>
-                    <option value="other" {{ old('cat') == 'other' ? 'selected' : '' }}>other</option>
+                    <option value="other" {{ old('cat') == 'other' ? 'selected' : '' }}>Other</option>
                 </select>
             </div>
 
@@ -84,16 +84,16 @@
                 <div class="form-check"></div>
             </div>
             <div class="col-md-12 ">
-                <button type="submit" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Park in</button>
+                <button type="submit" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Park In</button>
             </div>
         </form>
         <div class="card-body">
-            <table class="table table-dark table-bordered table-striped table-hover">
+            <table class="table table-light table-bordered table-striped table-hover">
                 <thead>
                     <h2>Current Rates</h2>
-                    <tr class="text-white">
+                    <tr class="text-black">
                         <th>Category</th>
-                        <th>Rate/hr</th>
+                        <th>Rate/Hr</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -52,7 +52,9 @@
             /* Two columns with equal width */
             gap: 20px;
             /* Gap between columns */
+            width: 100%;
         }
+        
     </style>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -67,7 +69,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <label for="month">
-                                    Select a month:
+                                    Select a Month:
                                 </label>
                                 <form id="monthForm" action="/report" method="GET">
                                     <input id="monthSelector" type="month" value="2" name="month">
@@ -114,21 +116,19 @@
                                     </div>
 
 
-
-
                                     <!-- TABLE -->
                                     <br>
-                                    <table class="table table-bordered table-striped">
+                                    <table class="table table-bordered table-striped text-cente text-center w-100">
                                         <thead>
                                             <tr class="bg-primary text-white">
-                                                <th>Reg no.</th>
-                                                <th>Category</th>
-                                                <th>Phone no.</th>
+                                                <th>Plate No.</th>
+                                                <th>Vehicle Type</th>
+                                                <th>Phone No.</th>
                                                 <th>Name</th>
-                                                <th>Charge</th>
-                                                <th>Payment mode</th>
-                                                <th>Arrival time</th>
-                                                <th>Departure time</th>
+                                                <th>Charge ($)</th>
+                                                <th>Payment Mathod</th>
+                                                <th>Time In</th>
+                                                <th>Time Out</th>
                                             </tr>
                                         </thead>
                                         <tbody>

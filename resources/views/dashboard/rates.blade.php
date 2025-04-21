@@ -34,6 +34,11 @@
             font-weight: bolder;
             font-size: larger;
         }
+
+        .btn-custom {
+            background-color: #1b4965;
+            border-color: #1b4965;
+        }
     </style>
 </head>
 
@@ -72,18 +77,18 @@
 
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <button type="submit" name="action" value="rate" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Update Rate</button>
+                            <div class="col-md-12" >
+                                <button type="submit" name="action" value="rate" style="background-color: #1b4965;" class="btn btn-primary btn-lg btn-block">Update Rate</button>
                             </div>
                             <!-- capacity -->
                             <div class="col-md-6">
-                                <label for="capacity" class="form-label" require>
+                                <label for="capacity" class="frm-label" require>
                                     Capacity: 
                                 </label>
                                 <input type="number" class="form-control" name="capacity" id="capacity">
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" name="action" value="cap" style="background-color: #05396b;" class="btn btn-primary btn-lg btn-block">Update Capacity</button>
+                                <button type="submit" name="action" value="cap" style="background-color: #1b4965;" class="btn btn-primary btn-lg btn-block">Update Capacity</button>
                             </div>
                         </form>
                         <br>

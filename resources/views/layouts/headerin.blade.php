@@ -6,7 +6,34 @@
         width: 100%;
         top: 0;
         z-index: 1000;
+        /* white-space: nowrap;
+        overflow-x: auto; */
     }
+
+    /* .navbar-collapse {
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+    }
+
+    .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .navbar,
+    .navbar-collapse,
+    .nav,
+    .nav a {
+        white-space: nowrap;
+        flex-wrap: nowrap !important;
+        overflow: hidden;
+    }   
+
+    .container-fluid {
+        min-width: 1200px; /* or a value that suits your full nav */
+    } */
 
     body {
         background-color: #84a59d;
@@ -22,7 +49,8 @@
         display: block;
         color: #f2f2f2;
         text-align: center;
-        padding: 14px 50px;
+        /* padding: 14px 50px; */
+        padding: 14px 24px;
         text-decoration: none;
         font-family: "Nunito", sans-serif;
         font-optical-sizing: auto;
@@ -35,9 +63,8 @@
     }
 
     .nav a.active {
-        background-color: #296e60;
+        background-color: #84a59d;
         color: white;
-
     }
 
  
@@ -61,7 +88,7 @@
                     <?php $timezone = date_default_timezone_set('America/New_York');
                     $date = date('d/m/Y');
                     echo $date; ?> <br>
-                    <?php $time = date('h:i:s A');
+                    <?php $time = date('h:i A');
                     echo $time; ?>
                     <br>
                     <p style="font-weight: bold;">{{$capmsg}}</p>
@@ -72,12 +99,24 @@
             </ul>
             <!-- THE NAVBAR -->
             <div class="nav" id="myNavbar">
-                <a href="home" class="{{ Request::route()->getName() == 'home' ? 'active' : '' }}" onclick="setActiveLink(1)">Home</a>
-                <a href="dashout" class="{{ Request::route()->getName() == 'dashout' ? 'active' : '' }}">Drive Out</a>
-                <a href="rate" class="{{ Request::route()->getName() == 'rate' ? 'active' : '' }}">Rate / Capacity</a>
-                <a href="history" class="{{ Request::route()->getName() == 'history' ? 'active' : '' }}">History</a>
-                <a href="report" class="{{ Request::route()->getName() == 'report' ? 'active' : '' }}">Report</a>
-                <a href="driveIn">Vehicle Entry</a>
+                <a href="home" class="{{ Request::route()->getName() == 'home' ? 'active' : '' }}" onclick="setActiveLink(1)">
+                    Dashboard
+                </a>
+                <a href="rate" class="{{ Request::route()->getName() == 'rate' ? 'active' : '' }}">
+                    Rate / Capacity
+                </a>
+                <a href="history" class="{{ Request::route()->getName() == 'history' ? 'active' : '' }}">
+                    History
+                </a>
+                <a href="report" class="{{ Request::route()->getName() == 'report' ? 'active' : '' }}">
+                    Report
+                </a>
+                <a href="driveIn">
+                    Park In
+                </a>
+                <a href="dashout" class="{{ Request::route()->getName() == 'dashout' ? 'active' : '' }}">
+                    Park Out
+                </a>
             </div>
 
             <!-- Right Side Of Navbar -->
@@ -111,7 +150,6 @@
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
-                        
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
