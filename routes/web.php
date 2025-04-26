@@ -4,6 +4,7 @@ use App\Http\Controllers\DriveinController;
 use App\Http\Controllers\DashdriveoutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\PaymentController;
 
 
 /*
@@ -22,7 +23,7 @@ use App\Http\Controllers\ChartController;
 // payment redirected with get
 Route::get('main/{id}', 'App\http\Controllers\MainController@show');
 
-Route::get('', 'App\http\Controllers\MainController@index');
+Route::get('/main', [App\Http\Controllers\MainController::class, 'index'])->name('main');
 
 // user_pages
 Route::get('/driveIn', 'App\http\Controllers\DriveinController@index');
@@ -58,3 +59,7 @@ Auth::routes();
 
 // calculations
 Route::post('/maths', 'App\http\Controllers\CalcController@maths');
+
+Route::post('/process-payment', [PaymentController::class, 'processPayment'])->name('process.payment');
+Route::get('/payment-success', [PaymentController::class, 'success'])->name('payment.success');
+Route::get('/payment-cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');

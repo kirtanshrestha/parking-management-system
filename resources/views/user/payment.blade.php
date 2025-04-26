@@ -13,7 +13,7 @@
             height: 400px;
             /* border: 3px solid #111; */
             border: solid 10px #71ad93;
-            border-radius:0%;
+            border-radius: 0%;
             /* background-image: linear-gradient(white, white),  */
             /* linear-gradient(to right, green, gold); */
             background-origin: border-box;
@@ -32,16 +32,17 @@
             color: #2F4858;
         }
     </style>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 
-<body >
+<body>
     @extends('layouts.headerlogin')
     @section('content')
     <div class="container">
         @csrf
         <p>{!! session('msg')!!}</p>
 
-        <p style="margin-top: 50px;font-size:large ">Select payment option:</P>
+        <p style="margin-top: 50px;font-size:large ">Select Payment Option:</P>
         <div class="row 2">
             <table>
                 <th>
@@ -63,14 +64,17 @@
                 <th>
                     <div class="col">
                         <div>
-                            <a href="main/{{'3'.session('data')}}"> <img src="img/debit.png" alt="helo"></a>
-                            <h6 style="text-align: center; margin-top:10px ">Debit/Credit Card</h6>
+                            <form action="/process-payment" method="POST" id="payment-form">
+                                @csrf
+                                <input type="hidden" name="amount" value="10"> <!-- Example amount -->
+                                <button id="card-button" class="btn btn-primary">Pay with Debit / Credit Card</button>
+                            </form>
                         </div>
                     </div>
                 </th>
 
             </table>
-            
+
 
         </div>
     </div>
@@ -79,3 +83,23 @@
 </body>
 
 </html>
+
+<script>
+    const stripe = Stripe('pk_test_51QckCVB25KygpkP3r9640OfL3qObYuAlAxUfmrlCrwZCpNqeE2ueXre3PYk9e6WPeUyMPoTldO31k2gSxBIWcc9n00OZ6VlPmt');
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-button');
+
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const { paymentMethod, error } = await stripe.createPaymentMethod('card', cardElement);
+
+        if (error) {
+            console.error(error);
+        } else {
+            form.submit();
+        }
+    });
+</script>

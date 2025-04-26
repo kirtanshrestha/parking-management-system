@@ -16,8 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
-    <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
-    <script src="{{ asset('build/assets/app.js') }}" defer></script>
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
 </head>
 
@@ -30,7 +29,7 @@
         <div class="row w-100 justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow rounded" style="padding: 2rem; border: none;">
-                    <div class="card-header text-center bg-primary text-white" style="font-size: 1.5rem; font-weight: 600;"> {{ __('Login') }} </div>
+                    <!-- <div class="card-header text-center bg-primary text-white" style="font-size: 1.5rem; font-weight: 600;"> {{ __('Login') }} </div> -->
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
