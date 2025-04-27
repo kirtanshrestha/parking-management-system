@@ -63,3 +63,8 @@ Route::post('/maths', 'App\http\Controllers\CalcController@maths');
 Route::post('/process-payment', [PaymentController::class, 'processPayment'])->name('process.payment');
 Route::get('/payment-success', [PaymentController::class, 'success'])->name('payment.success');
 Route::get('/payment-cancel', [PaymentController::class, 'cancel'])->name('payment.cancel');
+
+// Redirect the root URL to the main page
+Route::get('/', function () {
+    return redirect('/main');
+});
