@@ -1,9 +1,9 @@
-# Parking Management System for The Next Center
+# Parking Management System 
 
-A Laravel-based Parking Management System developed as a summer project at **Thames International College**. This system is designed to streamline parking management at The Next Center by reducing congestion and improving operational efficiency.
+A Laravel-based Parking Management System designed to streamline parking management by reducing traffic congestion and improving operational efficiency.
 
 ## Table of Contents
-- [Parking Management System for The Next Center](#parking-management-system-for-the-next-center)
+- [Parking Management System](#parking-management-system)
   - [Table of Contents](#table-of-contents)
   - [Project Overview](#project-overview)
   - [Features](#features)
@@ -15,9 +15,9 @@ A Laravel-based Parking Management System developed as a summer project at **Tha
     - [Usage](#usage)
     - [Testing](#testing)
     - [Limitations](#limitations)
-    - [Future Enhancements](#future-enhancements)
+    - [Potential Enhancements](#potential-enhancements)
     - [License](#license)
-    - [Contact](#contact)
+  - [Languages Used](#languages-used)
 
 ## Project Overview
 
@@ -28,17 +28,17 @@ The **Parking Management System (PMS)** was created to address parking challenge
 - **User Module**:
   - Real-time display of parking space availability
   - Streamlined entry and exit processes
-  - ![User Module Screenshot](public/img/readme/user.jpg)
+  ![User Module Screenshot](public/img/readme/user.png)
 
 - **Admin Module**:
   - Manage parking spot availability and monitor usage
   - Generate and view parking utilization reports
   - Set dynamic rates based on demand
-  - ![Rates](public/img/readme/rates.jpg)
+   ![Rates](public/img/readme/drivein.png)
 
 - **Payment Integration**:
   - Integrated online payment processing for parking fees
-  - ![Payment Processing Screenshot](public/img/readme/pay.jpg)
+  <!-- - ![Payment Processing Screenshot](public/img/readme/pay.jpg) -->
 
 ## Technologies Used
 
@@ -46,7 +46,7 @@ The **Parking Management System (PMS)** was created to address parking challenge
 - **Frontend**: HTML, CSS, Bootstrap
 - **Database**: MySQL (using XAMPP)
 - **Tools and IDE**: Visual Studio Code
-- **Browsers**: Google Chrome and Microsoft Edge for testing
+- **Browsers**: Safari and Google Chrome for testing
 - **Version Control**: Git and GitHub
 
 ## Installation
@@ -96,15 +96,15 @@ Access the application at [http://localhost:8000](http://localhost:8000).
 
 
 ## Alternatively: 
-  This version includes an alternative step for importing the database directly. Let me know if you'd like further customization!
+  This version includes an alternative step for importing the database directly. Reach out for further customization.
 
 
 ### Usage
 - **Admin Dashboard**: Access the admin dashboard to manage parking spaces, monitor usage, and view reports.
-    ![Admin Dashboard Screenshot](public/img/readme/report.jpg)
+    ![Admin Dashboard Screenshot](public/img/readme/report.png)
 
 - **User Module**: Users can find number of available parking spaces and complete parking-related transactions.
-    ![User Module Screenshot](public/img/readme/drivein.jpg)
+    ![User Module Screenshot](public/img/readme/drivein.png)
 
 ### Testing
 The system has been tested for:
@@ -117,7 +117,7 @@ The system has been tested for:
 - High initial setup costs and dependency on XAMPP for local hosting.
 - Limited scalability for larger parking lots or more complex systems.
 
-### Future Enhancements
+### Potential Enhancements
 - **Smart Parking Sensors**: Integrating IoT sensors for real-time availability updates.
 - **Advanced Analytics**: Data analysis for usage insights and dynamic rate optimization.
 - **Automated License Plate Recognition (ALPR)**: To streamline vehicle entry and exit tracking.
@@ -125,6 +125,9 @@ The system has been tested for:
 ### License
 This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) file for more details.
 
-### Contact
-Developed by Kirtan Shrestha   
-[work.kirtanshrestha@gmail.com](mailto:work.kirtanshrestha@gmail.com)
+## Languages Used
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Blade](https://img.shields.io/badge/Blade-ff2d20?style=for-the-badge&logo=laravel&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
