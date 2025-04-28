@@ -58,6 +58,11 @@ class DashdriveoutController extends Controller
             $rate_arr[$value->category] = $value->rate;
         }
 
+        // Ensure a default rate for 'other' category
+        if (!isset($rate_arr['other'])) {
+            $rate_arr['other'] = 0; // Set a default value, e.g., 0 or any appropriate rate
+        }
+
         // dd($data);
 
         $string = $data[0]->created_at;
