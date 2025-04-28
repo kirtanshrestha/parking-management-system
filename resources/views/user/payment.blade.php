@@ -20,6 +20,11 @@
             background-clip: content-box, border-box;
         }
 
+        img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
         p {
             color: #2F4858;
             font-weight: bolder;
@@ -45,7 +50,7 @@
         <p style="margin-top: 50px;font-size:large ">Select Payment Option:</P>
         <div class="row 2">
             <table>
-                <th>
+                <!-- <th>
                     <div class="col">
                         <div>
                             <a href="main/{{'1'.session('data')}}"> <img src="img/cash1.png" alt="helo"></a>
@@ -60,28 +65,28 @@
                             <h6 style="text-align: center; margin-top:10px ">Digital Wallet</h6>
                         </div>
                     </div>
-                </th>
+                </th> -->
                 <th>
                     <div class="col">
                         <div>
                             <form action="/process-payment" method="POST" id="payment-form">
                                 @csrf
                                 <input type="hidden" name="amount" value="10"> <!-- Example amount -->
+                                <a href="#" onclick="document.getElementById('payment-form').submit();">
+                                    <img src="/img/debit-credit.png" alt="Debit / Credit Card" style="width: 400px; height: auto; margin-bottom: 10px;">
+                                </a>
+                                <br>
                                 <button id="card-button" class="btn btn-primary">Pay with Debit / Credit Card</button>
                             </form>
                         </div>
                     </div>
                 </th>
-
             </table>
-
-
         </div>
     </div>
     @endsection
 
 </body>
-
 </html>
 
 <script>
